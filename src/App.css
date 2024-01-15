@@ -258,9 +258,13 @@ transition: 0.6s ease-in-out;
   
 }
 
-#about a,#about p{
+#about a{
   color: inherit;
   margin: 1rem;
+}
+
+#about p{
+  margin-top: 1rem;
 }
 
 #about>div{
