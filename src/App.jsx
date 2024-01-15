@@ -20,7 +20,7 @@ function App() {
   const [bgmvolume, setBgmvolume] = useState(0.4);
   const [clickSound,setClickSound]=useState(true)
 
-  useEffect(() => { it
+  useEffect(() => {
   let bgSound;
     if (bgm) {
         bgSound = new Howl({

@@ -52,7 +52,7 @@ document.getElementById("modal").classList.add("show")
           <h1>
             <i className="fa fa-gear"></i> Settings
           </h1>
-          <span className="closeBtn" style={{color:'red'}} onClick={()=>props.close()}>&times;</span>
+          <span className="closeBtn" style={{color:'red',fontWeight:'bold'}} onClick={()=>props.close()}>&times;</span>
         </div>
         <div className="modal_content">
           <div>
