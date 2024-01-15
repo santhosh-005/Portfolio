@@ -264,7 +264,7 @@ transition: 0.6s ease-in-out;
 }
 
 #about p{
-  margin-top: 1rem;
+  padding: 1rem;
 }
 
 #about>div{
