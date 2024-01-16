@@ -21,13 +21,12 @@ function App() {
   const [clickSound,setClickSound]=useState(true)
 
   useEffect(() => {
-  let bgSound;
+  let bgSound= new Howl({
+    src: bgMusic,
+    loop: true,
+    volume:bgmvolume,
+  });
     if (bgm) {
-        bgSound = new Howl({
-          src: bgMusic,
-          loop: true,
-          volume:bgmvolume,
-        });
       bgSound.seek(seekPosition)
       bgSound.play();
     }
