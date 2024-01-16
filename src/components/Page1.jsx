@@ -21,7 +21,7 @@ const page1Styles = {
     <nav>
       <h1>
       <i id="gear_icon" className="fa fa-gear" onClick={setModal}></i>
-        <span style={{ color: "#f39c12" }}> P</span>ortfolio
+        <span style={{ color: "#f39c12" }}>P</span>ortfolio
       </h1>
       <div>
         <a href="#gamePage">Play</a>
