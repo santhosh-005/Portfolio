@@ -31,7 +31,7 @@ function Page3() {
             <div className="icons">
               <a href="https://wa.me/8668023574" target='_blank'><img src={whatsapp} alt="whatsapp" /></a>
               <a href="https://www.instagram.com/ultracoder_005?igsh=ODA1NTc5OTg5Nw==" target="_blank"><img src={insta} alt="insta" /></a>
-              <a href="" target='_blank'><img src={linkedin} alt="linkedin" /></a>
+              <a href="https://www.linkedin.com/in/santhosh-kumar-81744b2aa" target='_blank'><img src={linkedin} alt="linkedin" /></a>
             </div>
           </div>
         </div>
