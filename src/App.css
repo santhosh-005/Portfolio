@@ -437,6 +437,7 @@ hr {
 
   #page3 {
     flex-direction: column;
+    justify-content: space-around;
   }
 
   #page3 div {
