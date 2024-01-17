@@ -14,11 +14,11 @@ function Game() {
   const [win,setWin]= useState("")
   const [botSpeed,setBotSpeed]=useState(2)
   const [defaultX,setdefaultX]=useState(0)
+  const [defaultY,setdefaultY]=useState(0)
 
   const useref = useRef(null);
 
   const gameCharStyles = {
-    height: "20rem",
     marginTop:'6rem',
     transform: `translateX(${boyX}px)`,
     marginLeft: `-${botX}px`,
@@ -29,20 +29,33 @@ function Game() {
     if (element) {
       const rect = element.getBoundingClientRect();
       setdefaultX(rect.x)
+      setdefaultY(rect.y) 
+      // console.log(rect.y)
       }
   },[botX===0])
 
+  
+
   useEffect(()=>{
     const element = useref.current;
-     let currentX;
     if (element) {
       const rect = element.getBoundingClientRect();
-      currentX=rect.x
-      if (currentX===defaultX+100){
-        setWin("Congratulations, You Won")
-      }else if(currentX===defaultX-100){
-        setWin("Computer Won")
+      
+      // console.log(rect.y)
+      if(window.innerWidth<=400){
+        if (rect.y===defaultY+50){
+          setWin("Congratulations, You Won")
+        }else if(rect.y===defaultY-50){
+          setWin("Computer Won")
+        }
+      }else{
+        if (rect.x===defaultX+100){
+          setWin("Congratulations, You Won")
+        }else if(rect.x===defaultX-100){
+          setWin("Computer Won")
+        }
       }
+      
     }
   },[botX,boyX])
 
@@ -98,7 +111,7 @@ if(!playModal && !playAgainModal){
         
         {playModal && (
         <div className="gameStartModal">
-          <img height='240px' src={gameLogo} alt="" />
+          <img  src={gameLogo} alt="" />
           <button onClick={handlePlay}>Play now</button>
           <h4>Bot Trigger Speed <span><select value={botSpeed} onChange={(e)=>setBotSpeed(e.target.value)}>
             <option value="2">2</option>
@@ -121,7 +134,7 @@ if(!playModal && !playAgainModal){
           </div>
         )}
         <hr />
-        <img style={gameCharStyles} ref={useref} src={gameChar} alt="game char" />
+        <img style={gameCharStyles} ref={useref} src={gameChar} id="gameChar" alt="game char" />
           <div className="timer"><h1 style={{color:'black'}}>{time}</h1></div>
           <img className="triggerBtn" onClick={() => setBoyX((prev) => prev + 20)} src={triggerBtn} alt="triggerBtn" />
 

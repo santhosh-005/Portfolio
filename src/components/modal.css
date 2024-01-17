@@ -11,8 +11,8 @@
 
 .modal{
     transform: translateY(-130%);
-    height: 64vh;
-    width: 56vw;
+    height: fit-content;
+    width: 50rem;
     border: 3px solid rgba(245, 245, 245, 0.589);
     padding: 1rem;
     border-radius: 5px;
@@ -47,19 +47,21 @@
    justify-content: space-around;
 }
 
-.bgBox{
+.bgBox{ 
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .bgBox img{
-    height: 100px;
-    width: 180px;
+    height: 6rem;
+    width: 11.2rem;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid white;
 }
+
 
 .bgBox div{
     display: flex;
@@ -83,8 +85,8 @@ label{
 label::before{
   content: "";
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 1.3rem;
+  width: 1.3rem;
   border: 2px solid white;
 }
 
@@ -92,13 +94,13 @@ label::before{
 label::after{
     content: "";
     position: absolute;
-    height: 24px;
-    width: 10px;
-    border-right: 5px solid #52f312;
-    border-bottom: 5px solid #52f312;
+    height: 1.6rem;
+    width: 0.56rem;
+    border-right: 0.3rem solid #52f312;
+    border-bottom: 0.3rem solid #52f312;
     transform: rotate(45deg);
-    left: 13px;
-    top: -10px;
+    left: 0.8rem;
+    top: -0.56rem;
     opacity: 0;
     border-radius:6px;
     }
@@ -109,6 +111,10 @@ input[type=radio]:checked + label::after {
 
 input[type=checkbox]:checked + label::after {
     opacity: 1;
+}
+
+#bgmVolume{
+    width: 8rem;
 }
 
 .soundBox{
@@ -122,8 +128,8 @@ input[type=checkbox]:checked + label::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:10vh ;
-    width: 20%;
+    height:5rem ;
+    width: 10rem;
     background-color: rgb(59, 58, 58);
     border-radius: 10px;
 }
@@ -133,4 +139,17 @@ input[type=checkbox]:checked + label::after {
 }
 .closeBtn:hover, .modal_content img,input,label{
    cursor: pointer;
+}
+
+@media screen and (max-width:400px) {
+    .soundBox label{
+        margin: 1.68rem 0;
+    }
+
+
+.bgBox img{
+    height: 8rem;
+    width: 16rem;
+    margin: 1rem;
+}
 }

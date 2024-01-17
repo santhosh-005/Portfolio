@@ -4,28 +4,29 @@
   box-sizing: border-box;
 }
 
-
 body {
   background-color: black;
   color: white;
 }
-html{  
-
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-#page1,#page2,#page3{
-    height: 100vh;
+#page1,
+#page2,
+#page3,
+#gamePage{
+  height: 100vh;
 }
 
-#page1{
+#page1 {
   border: 1px solid transparent;
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.5s ease-in;
 }
 
- /* nav bar */
+/* nav bar */
 
 nav {
   margin: 2.2rem;
@@ -88,131 +89,125 @@ nav > div > a:hover {
   text-shadow: 2px 2px 20px black;
 }
 
+.main-content h3 + p {
+  color: #ffffffe7;
+  text-shadow: 2px 2px 8px black;
+}
 
-.main-content h3+p{
-    color: #ffffffe7;
-    text-shadow: 2px 2px 8px black;
-  }
-
-.main-content #selfImage{
-filter: drop-shadow(0px 0px 6px rgb(65, 65, 65));
+.main-content #selfImage {
+  filter: drop-shadow(0px 0px 6px rgb(65, 65, 65));
 }
 
 /* dropdown bar */
 
-.drop-down{
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
+.drop-down {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
 }
 
-.drop-down i{
-    color: #f39c12;
-    font-size: 2.6rem;
-    animation: drop-down 1.2s infinite ease-in-out; 
+.drop-down i {
+  color: #f39c12;
+  font-size: 2.6rem;
+  animation: drop-down 1.2s infinite ease-in-out;
 }
 
-.drop-down i:hover{
-    cursor: pointer;
+.drop-down i:hover {
+  cursor: pointer;
 }
 
 @keyframes drop-down {
-    0%{
-        transform: translateY(0);
-    }
-    100%{
-        transform: translateY(20px);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
 }
-
 
 /* tech used */
 
-#page2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+#page2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-#page2>div{
+#page2 > div {
   width: 100%;
 }
 
-.icons{
-    justify-content: space-around;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 3rem 0;
-    padding: 0 20%;
+.icons {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 3rem 0;
+  padding: 0 20%;
 }
 
-.icons img{
-height: 80px;
-transition: 0.6s ease-in-out;
+.icons img {
+  height: 80px;
+  transition: 0.6s ease-in-out;
 }
 
-.icons img:hover{
-    cursor: pointer;
-    transform: scale(1.12);
-    filter: drop-shadow(0px 0px 30px #f39c12);
+.icons img:hover {
+  cursor: pointer;
+  transform: scale(1.12);
+  filter: drop-shadow(0px 0px 30px #f39c12);
 }
 
-
-.popular-repos{
-    height: 100%;
-    width:98vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    overflow-x: scroll;
-    scrollbar-width:none;   
-    margin: auto;
+.popular-repos {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+  scrollbar-width: none;
 }
 .popular-repos::-webkit-scrollbar {
-    width: 0px;
-  }
-
-
-.repo{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #2b2927ec;
-    border-radius: 10px;
-    height: 100px;
-    width: 16vw;
-    margin: 2rem;
-    scrollbar-width:none;
-    transition: 0.3s ease-in-out;
+  width: 0px;
 }
 
-
-.repo a{
-    text-decoration: none;
-    color: blueviolet;
-}
-.repo a:hover{
-    text-decoration: underline;
-    text-decoration-color: white;
-}
-
-
-.repo img{
-    height: 50px;
-    border: 1px solid white;
-    border-radius: 50%;
+.repo {
+  flex: 0 0 16rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2b2927ec;
+  border-radius: 10px;
+  height: 6.2rem;
+  width: 240px;
+  margin: 2.4rem;
 }
 
-.repo:hover{
-    transform: translateY(-6px);
+.repo a {
+  text-decoration: none;
+  color: blueviolet;
+}
+.repo a:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 
+.repo img {
+  height: 3.2rem;
+  border: 1px solid white;
+  border-radius: 50%;
+}
 
+.repo:hover {
+  transform: translateY(-6px);
+}
 
-#page3>div{
+#page2 h1{
+  margin: 1rem;
+}
+
+#page3 > div {
   width: 50%;
   /* border: 2px solid red ; */
   display: flex;
@@ -221,53 +216,50 @@ transition: 0.6s ease-in-out;
   align-items: center;
 }
 
-#page3 h1{
+#page3 h1 {
   font-size: 1.8rem;
 }
-.computer{
-  height:60%;
+.computer {
+  height: 24rem;
 }
 
-.quote{
+.quote {
   color: #52f312;
-  font-size: 1.4rem;
-  font-family: 'Inknut Antiqua';
+  font-size: 1.3rem;
+  font-family: "Inknut Antiqua";
   padding-bottom: 6.8rem;
 }
 
-
-#gear_icon{
+#gear_icon {
   margin-right: 1rem;
   color: rgb(172, 172, 172);
   animation: spin 10s infinite linear;
 }
 
-
 @keyframes spin {
-  from{
+  from {
     transform: rotate(0deg);
   }
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
 
-
-#about{
-  height: 30vh;
+#about {
+  height: 12rem;
   color: rgba(196, 194, 194, 0.719);
   background-color: rgb(34, 34, 34);
   text-align: center;
   font-weight: 300;
-  
 }
 
-#about a,#about p{
+#about a,
+#about p {
   color: inherit;
   margin: 1rem;
 }
 
-#about>div{
+#about > div {
   width: 100%;
   height: 74%;
   display: flex;
@@ -275,16 +267,14 @@ transition: 0.6s ease-in-out;
   align-items: center;
 }
 
-
 /* game page */
 
-
-*{
+* {
   margin: 0;
   box-sizing: border-box;
 }
 
-#gamePage{
+#gamePage {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -294,9 +284,9 @@ transition: 0.6s ease-in-out;
   color: white;
 }
 
-.gameBoard{
-  height: 80vh;
-  width: 80%;
+.gameBoard {
+  height: 32rem;
+  width: 66rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -309,30 +299,36 @@ transition: 0.6s ease-in-out;
   cursor: url(./assets/cursor.png);
 }
 
-hr{
+
+hr {
   border: 2px dashed red;
-  height: 300px;
+  height:26rem;
   margin-bottom: -1rem;
   direction: vertical;
   position: absolute;
 }
 
-.triggerBtn{
-  height: 100px;
+.triggerBtn {
+  height: 6rem;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
   cursor: pointer;
   filter: drop-shadow(0px 0px 6px black);
 }
-.timer{
+.timer {
   position: absolute;
   top: 1rem;
   right: 1rem;
   filter: drop-shadow(0px 0px 6px white);
 }
 
-.gameStartModal,.gameEndModal{
+#gameChar{
+  height:320px;
+}
+
+.gameStartModal,
+.gameEndModal {
   backdrop-filter: blur(20px);
   position: absolute;
   height: 100%;
@@ -342,112 +338,150 @@ hr{
   justify-content: center;
   align-items: center;
   z-index: 2;
-  border-radius:10px;
+  border-radius: 10px;
 }
 
-.gameStartModal button{
+.gameStartModal button {
   font-size: large;
   color: white;
   font-weight: bold;
   background-color: green;
-  border-radius: 16px;
-  padding: 8px 20px;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 1.6rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 
-.gameStartModal button:hover{
+.gameStartModal img{
+  height: 14rem;
+}
+
+.gameStartModal button:hover {
   background-color: rgb(10, 173, 10);
 }
 
-.gameEndModal img:hover{
+.gameEndModal img:hover {
   cursor: pointer;
   filter: drop-shadow(0px 0px 6px black);
 }
 
-#gamePage p{
+#gamePage p {
   color: white;
   position: absolute;
   left: 1rem;
   bottom: 1rem;
 }
 
-#gamePage h5{
+#gamePage h5 {
   color: black;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
 
-#game_logo{
+#game_logo {
   height: 100px;
   position: absolute;
   left: 0.4rem;
   bottom: 0.4rem;
 }
 
-#game_logo:hover{
- transform: translateY(-4px);
+#game_logo:hover {
+  transform: translateY(-4px);
 }
 
+/* Media Queries */
 
-@media screen and (max-width:400px) {
-  #page3,#gamePage,#about{
-    display: none;
-  }
-  html{
-    font-size: 0.6rem;
+@media screen and (max-width: 400px) {
+
+  html {
+    font-size: 0.5rem;
   }
 
-  nav div{
+  nav{
+    width: 90%;
+  }
+
+
+  nav div {
     margin: 0;
   }
 
-  #page1{
+  #page1 {
     width: 100%;
   }
 
-  #page1 .main-content{
+  #page1 .main-content {
     flex-direction: column;
     margin: 0;
     height: 80%;
-
   }
 
-  #page1 #selfImage{
+  #page1 #selfImage {
     height: 50vh;
   }
 
-  #game_logo{
+  #game_logo {
     height: 8rem;
   }
 
-  #page2 .icons{
+  #page2 .icons {
     padding: 0 3rem;
     flex-wrap: wrap;
   }
 
-  #page2  .icons img{
+  #page2 .icons img {
     margin: 1rem;
   }
 
-  .popular-repos,
-  .popular-repos .repo{
-    width: 100%;
-  }
-
-
-  #page3{
+  #page3 {
     flex-direction: column;
   }
 
-  #page3 div{
+  #page3 div {
     width: 100%;
   }
 
-  #page3 .icons{
+  #page3 .icons {
     padding: 0 2rem;
   }
- 
+
+  #gamePage .gameBoard{
+    transform: rotate(90deg);
+  }
+
+  #gameChar{
+    height: 160px;
+  }
+
+  .dropDownMenu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2.4rem;
+  }
+  
+  .dropDownMenu div{  
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgb(148, 148, 148);
+    padding: 2rem;
+    border-radius: 3px;
+  } 
+  .dropDownMenu a{
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+  font-size: larger;
+  margin: 0.6rem 0;
+}
+
 }

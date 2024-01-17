@@ -23,6 +23,13 @@ const repos = [
       Type: "Game",
       language: "JavaScript",
     },
+    {
+      name: "Simple Calculator",
+      url: "https://react-calculator-app-psi.vercel.app/",
+      Type: "App",
+      language: "React js",
+    },
+    
   ];
 
   export default repos;
