@@ -30,7 +30,7 @@ function Game() {
       const rect = element.getBoundingClientRect();
       setdefaultX(rect.x)
       setdefaultY(rect.y) 
-      // console.log(rect.y)
+      console.log(rect.y)
       }
   },[botX===0])
 
@@ -41,7 +41,7 @@ function Game() {
     if (element) {
       const rect = element.getBoundingClientRect();
       
-      // console.log(rect.y)
+      console.log(rect.y)
       if(window.innerWidth<=400){
         if (rect.y===defaultY+50){
           setWin("Congratulations, You Won")
