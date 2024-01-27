@@ -21,9 +21,9 @@ function About() {
             <p>santhoshdon000555@gmail.com</p>
         </div>
       </div>
-      <p>
-        <span>&#9400;</span> 2024 Santhoshkumar
-      </p>
+     
+        <span>&#9400; 2024 Santhoshkumar</span> 
+      
     </div>
   );
 }
