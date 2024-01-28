@@ -31,7 +31,7 @@ function Page1({ bgImg, setModal }) {
         {window.innerWidth <= 500 ? (
           <div className="dropDownMenu" onClick={(e)=>e.target.className=="dropDownMenu" && setDropDown(false)}>
             <h1 onClick={() => setDropDown(!dropDown)}>&#9776;</h1>
-            { dropDown && 
+            { dropDown &&   
             <div id="menu">
               <a href="#gamePage">Play</a>
               <a href="#page2">Projects</a>

@@ -285,8 +285,8 @@ nav > div > a:hover {
 }
 
 .gameBoard {
-  height: 32rem;
-  width: 66rem;
+  height: 500px;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
