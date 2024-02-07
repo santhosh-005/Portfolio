@@ -41,15 +41,15 @@ function Game() {
 
       // console.log(rect.y)
       if (window.innerWidth <= 400) {
-        if (rect.y === defaultY + 50) {
+        if (rect.y >= defaultY + 50) {
           setWin("Congratulations, You Won");
-        } else if (rect.y === defaultY - 50) {
+        } else if (rect.y <= defaultY - 50) {
           setWin("Computer Won");
         }
       } else {
-        if (rect.x === defaultX + 100) {
+        if (rect.x >= defaultX + 100) {
           setWin("Congratulations, You Won");
-        } else if (rect.x === defaultX - 100) {
+        } else if (rect.x <= defaultX - 100) {
           setWin("Computer Won");
         }
       }
