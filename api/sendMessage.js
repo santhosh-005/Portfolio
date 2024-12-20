@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   const VITE_SMTP_EMAIL = process.env.VITE_SMTP_EMAIL;
