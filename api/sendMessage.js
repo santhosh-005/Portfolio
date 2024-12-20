@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   const VITE_SMTP_EMAIL = process.env.VITE_SMTP_EMAIL;
   const VITE_SMTP_PASS = process.env.VITE_SMTP_PASS;
   const VITE_RECEIVER_EMAIL = process.env.VITE_RECEIVER_EMAIL;
-  const VITE_FROM_EMAIL = process.env.VITE_FROM_EMAIL;
 
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
@@ -23,7 +22,7 @@ export default async function handler(req, res) {
       });
 
       const mailOptions = {
-        from: VITE_FROM_EMAIL,
+        from: "portfolio.contact@gmail.com",
         to:  VITE_RECEIVER_EMAIL, 
         subject: `New message from ${name}`,
         html: `<p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`,
