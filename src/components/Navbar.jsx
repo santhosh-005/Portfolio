@@ -3,7 +3,7 @@ import React from 'react'
 function Navbar({setModal}) {
   return (
         <nav>
-            <h1>
+            <h1 data-aos="fade-left">
               <a href="#home">
                 <i id="gear_icon" className="fa fa-gear" onClick={()=>setModal(true)}></i>
                 <span style={{ color: "#f39c12" }}>P</span>ortfolio
@@ -21,7 +21,7 @@ function Navbar({setModal}) {
                 </div>}
               </div>
             ) : ( */}
-              <div>
+              <div data-aos="fade-right">
                 <a id='home_play_btn' href="#gamePage">Play</a>
                 <a href="#page2">Projects</a>
                 <a href="#about">About</a>

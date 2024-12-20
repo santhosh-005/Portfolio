@@ -9,6 +9,9 @@ import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
 import { Howl } from "howler";
 import About from "./components/About";
+import 'aos/dist/aos.css'; // AOS Styles
+import AOS from 'aos';      // AOS JavaScript
+
 const Game = React.lazy(() => import("./components/Game"));
 
 
@@ -19,6 +22,15 @@ function App() {
   const [seekPosition, setSeekPosition] = useState(1);
   const [bgmvolume, setBgmvolume] = useState(0.4);
   const [clickSound,setClickSound]=useState(false)
+
+
+  useEffect(()=>{
+    AOS.init({
+      duration: 800,  
+      easing: 'ease-out', 
+      once: true, 
+    });
+  },[])
 
   useEffect(() => {
   let bgSound= new Howl({

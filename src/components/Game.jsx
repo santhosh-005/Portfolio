@@ -106,7 +106,7 @@ function Game() {
 
   return (
     <div id="gamePage">
-      <div className="gameBoard">
+      <div className="gameBoard" data-aos="fade-up">
         {playModal && (
           <div className="gameStartModal">
             <img src={gameLogo} alt="" />

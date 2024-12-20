@@ -25,7 +25,7 @@ function Page1({ bgImg, setModal }) {
     <div id="page1" style={page1Styles}>
       <Navbar setModal={setModal} />
       <div className="main-content">
-        <div>
+        <div data-aos="fade-right">
           <p>Hey there! This is</p>
           <h1>Santhosh</h1>
           <img className="dev-role" src={devText} alt="Full Stack Developer" />
@@ -57,7 +57,7 @@ function Page1({ bgImg, setModal }) {
           </a>
         </div>
         {/* self image */}
-        <img src={selfImage} id="selfImage" height="500px" alt="" />
+        <img src={selfImage} id="selfImage" height="500px" alt="hero-image" data-aos="fade-left"/>
       </div>
     </div>
   );
