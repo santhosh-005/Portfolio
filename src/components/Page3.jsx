@@ -9,8 +9,8 @@ function Page3() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = React.useState('');
-  console.log(status)
+  const [status, setStatus] = React.useState("");
+  const [model, setModel] = React.useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +22,9 @@ function Page3() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(formData.name.trim() != ""  && formData.email.trim() != ""  && formData.message.trim() != "" ){
     try {
+      setModel(true)
       const response = await fetch('/api/sendMessage', {
         method: 'POST',
         headers: {
@@ -32,16 +34,22 @@ function Page3() {
       });
 
       if (response.ok) {
-        setStatus('Message sent successfully!');
+        setStatus('send');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('Failed to send the message.');
+        setStatus("failed");
       }
     } catch (error) {
       console.error('Error:', error);
-      setStatus('An error occurred.');
+      setStatus('failed');
     }
+  }
   };
+
+  const handleBack = () => {
+    setStatus("");
+    setModel(false);
+  }
 
 
   return (
@@ -55,7 +63,7 @@ function Page3() {
           You can connect with me on email, instagram or this form.
         </p>
       </div>
-      <div>
+      <div className='form-div'>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -86,7 +94,31 @@ function Page3() {
           ></textarea>
           <button type="submit">Send Message</button>
         </form>
-
+        { model && 
+          <div className="notify-msg-div">
+            {
+              status == "" ?
+              <>
+                <h1 id='notify-symbol'>⏳</h1>
+                <p id='notify-msg'>sending...</p> 
+              </> :
+              <> 
+              {
+                status ==  "send" ? 
+                <>
+                  <h1 id='notify-symbol'>✔️</h1> 
+                  <p id='notify-msg'> Message send! <span onClick={handleBack}> back</span></p>
+                </> :
+                <>
+                  <h1 id='notify-symbol'>⚠️</h1> 
+                  <p id='notify-msg'> Something went wrong! <span onClick={handleBack}> back</span></p>
+                </>
+                
+              }
+              </>
+            }
+          </div>
+        }
       </div>
     </div>
   )

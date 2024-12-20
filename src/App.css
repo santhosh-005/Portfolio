@@ -323,6 +323,46 @@ button:hover {
   background-color: #0056b3;
 }
 
+.form-div{
+  position: relative;
+}
+
+.notify-msg-div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.692);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.notify-msg-div #notify-symbol{
+  font-size: 3rem;
+}
+
+.notify-msg-div #notify-msg{
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+
+.notify-msg-div #notify-msg span{
+    font-weight: normal;
+    color: #ff7b26;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 #gear_icon {
   margin-right: 1rem;
   color: rgb(172, 172, 172);
