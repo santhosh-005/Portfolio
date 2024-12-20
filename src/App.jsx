@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import "./App.css";
 import clickSoundEffect from './assets/clicksoundnew.mp3'
 import bgMusic from './assets/bgMusic.mp3'
@@ -9,7 +9,7 @@ import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
 import { Howl } from "howler";
 import About from "./components/About";
-import Game from "./components/Game";
+const Game = React.lazy(() => import("./components/Game"));
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   const [bgm,setBgm]=useState(false)
   const [seekPosition, setSeekPosition] = useState(1);
   const [bgmvolume, setBgmvolume] = useState(0.4);
-  const [clickSound,setClickSound]=useState(true)
+  const [clickSound,setClickSound]=useState(false)
 
   useEffect(() => {
   let bgSound= new Howl({
@@ -45,6 +45,7 @@ useEffect(() => {
 }, [modal]);
 
 
+
 const handleClick=()=>{
   if (clickSound){
     const clickSounds=new Howl({
@@ -67,21 +68,25 @@ const handleScroll=()=>{
 }
 
   return (   
-    <div onClick={handleClick}>
+    <div onClick={handleClick} id="home">
 
 {modal &&   <Modal close={()=>setModal(false)} bgImg={bgImg} setBgImg={setBgImg} modal={modal} 
 setBgm={setBgm} bgm={bgm} setBgmvolume={setBgmvolume} bgmvolume={bgmvolume} setClickSound={setClickSound} clickSound={clickSound} />} 
 
-      <Page1 bgImg={bgImg} setModal={()=>setModal(true)} />
+      <Page1 bgImg={bgImg} setModal={setModal} />
       <Page2 />
       <Page3 />  
-      <Game />
+
+      <Suspense fallback={<div>Loading...</div>}>
+            <Game />
+      </Suspense>
+
       <About /> 
       <div className="drop-down">
         <i className="fa fa-angle-double-down" onClick={handleScroll}></i>
       </div>
 
-      <div>
+      <div id="game_logo_poster">
         <a href="#gamePage"><img id="game_logo" src={gameLogo} alt="gameLogo" /></a>
       </div>
     </div>

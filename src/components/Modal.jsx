@@ -58,8 +58,10 @@ document.getElementById("modal").classList.add("show")
           <div>
             <h3>Background Theme</h3>
             <div className="bgBox">
-              <div>
-                <img src={blackbg} alt="noBg" onClick={()=>props.setBgImg("bg0")} />
+              <div >
+                <div  onClick={()=>props.setBgImg("bg0")}>
+                  <p> Default Background</p>
+                </div>
                 <input type="radio" id="radio0" name="bgTheme" checked={props.bgImg=='bg0' ? true : false} onChange={handleBg} />
                 <label htmlFor="radio0"></label>
               </div>

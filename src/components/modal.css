@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 10;
 }
 
 .modal{
@@ -54,9 +54,9 @@
     align-items: center;
 }
 
-.bgBox img{
+.bgBox img, .bgBox > div > div{
     height: 6rem;
-    width: 11.2rem;
+    width: 11rem;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid white;
@@ -75,14 +75,14 @@ input[type=radio],input[type=checkbox]{
 display: none;
 }
 
-label{
+.modal_page label{
     position: relative;
     margin: 20px;
     left: -12px;
     top: -12px;
 }
 
-label::before{
+.modal_page label::before{
   content: "";
   position: absolute;
   height: 1.3rem;
@@ -91,7 +91,7 @@ label::before{
 }
 
 
-label::after{
+.modal_page label::after{
     content: "";
     position: absolute;
     height: 1.6rem;
@@ -137,7 +137,7 @@ input[type=checkbox]:checked + label::after {
 .modal_content h3{
     margin: 1rem;
 }
-.closeBtn:hover, .modal_content img,input,label{
+.closeBtn:hover, .modal_content img,input,label, .bgBox > div > div{
    cursor: pointer;
 }
 
@@ -147,7 +147,7 @@ input[type=checkbox]:checked + label::after {
     }
 
 
-.bgBox img{
+.bgBox img, .bgBox > div > div{
     height: 8rem;
     width: 16rem;
     margin: 1rem;

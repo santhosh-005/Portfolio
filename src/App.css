@@ -5,9 +5,12 @@
 }
 
 body {
-  background-color: black;
+  background-image: url('./assets/space-bg.png');
+  background-position-x: right;
   color: white;
 }
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,8 +22,12 @@ html {
   height: 100vh;
 }
 
+a{
+  text-decoration: none;
+}
+
 #page1 {
-  border: 1px solid transparent;
+  padding-top: 0.2rem;
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.5s ease-in;
@@ -28,33 +35,46 @@ html {
 
 /* nav bar */
 
+
+
 nav {
-  margin: 2.2rem;
+  background-color: #03010f;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
+  border: 1px solid gray;
+  padding: 0.8rem 1.2rem;
+  position: fixed;
+  margin: 0.6rem auto;
+  width: 80vw;
+  border-radius: 2rem;
+  transition: all 0.5s ease-in;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 nav > div {
   display: flex;
-  width: 60%;
+  width: 50%;
   justify-content: space-between;
   align-items: center;
-  margin-right: 3rem;
 }
 
-nav > h1 {
-  font-size: 2.4rem;
+nav > h1 a{
+  color: white;
+}
+
+nav > h1{
+  font-size: 2rem;
 }
 nav > h1:hover {
   cursor: pointer;
 }
 
 nav > div > a {
-  font-size: 1.4rem;
-  color: white;
-  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.76);
   transition: 0.3s ease-in-out;
-  text-decoration: none;
 }
 
 nav > div > a:hover {
@@ -63,9 +83,19 @@ nav > div > a:hover {
   transform: translateY(-4px);
 }
 
+.chat-btn{
+  border-radius: 1rem;
+  padding: 0.3rem 0.8rem ;
+  border: 1px solid #f39c12;
+  color: #f39c12;
+}
+
+
 /* main content */
 
 .main-content {
+  margin-top: 1rem;
+  padding: 6rem 0 0 1rem;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -74,7 +104,7 @@ nav > div > a:hover {
 
 .main-content h1 {
   font-size: 4.6rem;
-  color: #f39c12;
+  color: #f3ac12;
   text-shadow: 0px 0px 10px black;
 }
 
@@ -82,10 +112,14 @@ nav > div > a:hover {
   font-size: 1.3rem;
   text-decoration: underline;
   text-decoration-color: #f39c12;
-  text-shadow: 0px 0px 10px black;
+  font-weight: normal;
+  width: fit-content;
+  border: 2px solid #03010f;
+  padding: 0.5rem;
+  rotate: 4deg;
 }
 .main-content p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-shadow: 2px 2px 20px black;
 }
 
@@ -98,11 +132,24 @@ nav > div > a:hover {
   filter: drop-shadow(0px 0px 6px rgb(65, 65, 65));
 }
 
+
+.media-links{
+  margin: 1px;
+} 
+
+.dev-role{
+  height: 3.5rem;
+  rotate: 4deg;
+  margin: 0 0.5rem;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 /* dropdown bar */
 
 .drop-down {
   position: fixed;
-  bottom: 40px;
+  bottom: 40px; 
   left: 50%;
 }
 
@@ -144,12 +191,12 @@ nav > div > a:hover {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 3rem 0;
-  padding: 0 20%;
+  padding: 0 10%;
 }
 
 .icons img {
   height: 80px;
+  width: auto;
   transition: 0.6s ease-in-out;
 }
 
@@ -160,7 +207,6 @@ nav > div > a:hover {
 }
 
 .popular-repos {
-  height: 60%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -173,20 +219,20 @@ nav > div > a:hover {
 }
 
 .repo {
-  flex: 0 0 16rem;
+  flex: 0 0 15rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #2b2927ec;
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.863);
+  border-radius: 12px;
   height: 6.2rem;
-  width: 240px;
   margin: 2.4rem;
 }
 
 .repo a {
   text-decoration: none;
-  color: blueviolet;
+  color: #ff7b26;
+  font-family: serif;
 }
 .repo a:hover {
   text-decoration: underline;
@@ -207,27 +253,74 @@ nav > div > a:hover {
   margin: 1rem;
 }
 
-#page3 > div {
-  width: 50%;
-  /* border: 2px solid red ; */
+/* page3 */
+
+#page3{
+  width: 100%;
+  margin: 10vh auto;
+  display: flex;
+  padding: 10% 15% ;
+}
+
+#page3 > div{
+  flex: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
 }
 
-#page3 h1 {
+#page3 div p{
+  font-size: small;
+  color: rgb(175, 174, 174);
+  margin: 1rem 0;
+}
+
+#page3 h3{
   font-size: 1.8rem;
-}
-.computer {
-  height: 24rem;
+  font-weight: normal;
 }
 
-.quote {
-  color: #52f312;
-  font-size: 1.3rem;
-  font-family: "Inknut Antiqua";
-  padding-bottom: 6.8rem;
+#page3 form{
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+label {
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+textarea {
+  resize:vertical;
+}
+
+button {
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 #gear_icon {
@@ -393,7 +486,14 @@ hr {
 
 /* Media Queries */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1000px) {
+
+  #gamePage, #game_logo_poster, #home_play_btn{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
 
   html {
     font-size: 0.5rem;
@@ -403,29 +503,31 @@ hr {
     width: 90%;
   }
 
-
   nav div {
     margin: 0;
   }
 
+  .media-links img{
+      height: 14px;
+  } 
+  
+
  #page2,#page3{
-    height: fit-content;
+    height: 80vh;
     width: 100%;
   }
 
   #page1 .main-content {
     flex-direction: column;
-    margin: 0;
+    margin: 10vh 0 0 0;
     height: 80%;
   }
 
   #page1 #selfImage {
+    margin: 2rem 0 0 0;
     height: 50vh;
   }
 
-  #game_logo {
-    height: 8rem;
-  }
 
   #page2 .icons {
     padding: 0 3rem;
@@ -433,28 +535,17 @@ hr {
   }
 
   #page2 .icons img {
+    height: 34px ;
     margin: 1rem;
   }
 
-  #page3 {
+  #page3{
     flex-direction: column;
-    justify-content: space-around;
+    padding: 6%;
   }
 
-  #page3 div {
+  #page3 form{
     width: 100%;
-  }
-
-  #page3 .icons {
-    padding: 0 2rem;
-  }
-
-  #gamePage .gameBoard{
-    transform: rotate(90deg);
-  }
-
-  #gameChar{
-    height: 160px;
   }
 
   .dropDownMenu{
