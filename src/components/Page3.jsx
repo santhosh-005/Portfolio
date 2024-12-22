@@ -54,7 +54,7 @@ function Page3() {
 
   return (
     <div id="page3">
-      <div data-aos="fade-left">
+      <div data-aos="fade-up">
         <h3>
           Let's chat. <br />
           About tech, project and ideas.
@@ -63,7 +63,7 @@ function Page3() {
           You can connect with me on email, instagram or this form.
         </p>
       </div>
-      <div className='form-div' data-aos="fade-right">
+      <div className='form-div' data-aos="fade-up">
         <form onSubmit={handleSubmit}>
           <input
             type="text"

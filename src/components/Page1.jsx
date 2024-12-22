@@ -5,7 +5,6 @@ import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.jpg";
 import kalvium from "../assets/kalvium-logo.png";
 import selfImage from "../assets/selfImage.png";
-import selfImage2 from "../assets/selfImage2.png";
 import devText from "../assets/dev-text.png"
 import Navbar from "./Navbar";
 
@@ -25,7 +24,7 @@ function Page1({ bgImg, setModal }) {
     <div id="page1" style={page1Styles}>
       <Navbar setModal={setModal} />
       <div className="main-content">
-        <div data-aos="fade-right">
+        <div data-aos="fade-up">
           <p>Hey there! This is</p>
           <h1>Santhosh</h1>
           <img className="dev-role" src={devText} alt="Full Stack Developer" />
@@ -57,7 +56,7 @@ function Page1({ bgImg, setModal }) {
           </a>
         </div>
         {/* self image */}
-        <img src={selfImage} id="selfImage" height="500px" alt="hero-image" data-aos="fade-left"/>
+        <img src={selfImage} id="selfImage" height="500px" alt="hero-image" data-aos="fade-up"/>
       </div>
     </div>
   );
